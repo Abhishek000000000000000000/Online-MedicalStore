@@ -3,10 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart Page</title>
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        #parent {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #left, #right {
+            flex: 1;
+            padding: 10px;
+        }
+        #left {
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        #right {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        #logop {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        #logop img {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+        #cartList {
+            margin-top: 20px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .box_r {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
-    <h1>CART PAGE</h1>
-    <a href="./payment.html">PAYMENT PAGE</a>
+    <div id="parent">
+        <div id="left">
+            <div>
+                <p><span id="count">0</span> Items in your Cart</p>
+                <div id="logop">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/800px-Heart_coraz%C3%B3n.svg.png"
+                        alt="">
+                    <p>Add to wishlist</p>
+                </div>
+    
+            </div>
+            <div id="cartList"><span id="qty">0</span></div>
+        </div>
+        <div id="right">
+            <div>
+                <p>Cart total: <span id="totalprice">0</span></p>
+            </div>
+            <div>
+                <input type="text" id="applypromo" placeholder="Apply Coupons">
+                <button id="" onclick="applypromo()">Apply Coupon</button>
+                <button><a style="text-decoration: none; color: #000;" href="/Final_pharmesy/Mahesh/deleviry.html">Add Delivery Address</a></button>
+            </div>
+            <br>
+    
+            <div>
+                <p>Bill Summary</p>
+                <div class="box_r">
+                    <p>INR :</p>
+                    <p id="mrpTotal">0</p>
+                </div>
+    
+                <div class="box_r">
+                    <p>Cart Value: </p>
+                    <p id="totalV">0</p>
+                </div>
+    
+                <div class="box_r">
+                    <h4>Amount to be paid: </h4>
+                    <h4 id="totalA">0</h4>
+                </div>
+    
+            </div>
+            <br>
+            <div>
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+<link rel="stylesheet" href="./cart.js">
+<link rel="stylesheet" href="./payment.html">
