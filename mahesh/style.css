@@ -8,26 +8,52 @@
         }
         #parent {
             display: flex;
-            justify-content: space-between;
+            /* justify-content: space-between; */
             align-items: flex-start;
-            padding: 20px;
+            gap: 30px;
+            width: 80%;
+            margin: 50px auto;
+            /* padding: 20px;
             background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
         }
-        #left, #right {
+        /* #left, #right {
             flex: 1;
             padding: 10px;
-        }
+        } */
         #left {
+            width: 70%;
             background-color: #f9f9f9;
-            border-radius: 5px;
-            margin-right: 10px;
+            /* border-radius: 5px;
+            margin-right: 10px; */
+        }
+        #left > div:nth-child(1) > img{
+            width: 100%;
+            border-radius: 10px;
         }
         #right {
+            width: 30%;
             background-color: #fff;
             border-radius: 5px;
+            padding: 20px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         }
+
+        #right > div:nth-child(2){
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        #right > div:nth-child(2) > input{
+            padding: 10px;
+        }
+        /* #right > div:nth-child(2) > div > button{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            /* gap: 20px; */
+         */
         #logop {
             display: flex;
             align-items: center;
@@ -44,6 +70,7 @@
         button {
             background-color: #c2cedf;
             color: #fff;
+            width: 100%;
             border: none;
             padding: 8px 15px;
             border-radius: 5px;
