@@ -1,0 +1,44 @@
+.home{
+    padding: 2rem 10% ;
+    width: 80%;
+    padding-bottom: 5%;
+}
+.main-home{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 5%;
+}
+.main-inner-home .right-content-image img{
+    width: 100%;
+    padding-bottom: 3.5rem;
+}
+.main-inner-home h1{
+    font-size: 70px;
+    font-weight: 700;
+    
+}
+.main-inner-home p{
+    font-size: 40px;
+    font-weight: 300;
+    margin-top: -4%;
+}
+.main-inner-home{
+    background-color: #f5f5f5;
+    flex: 1 1 20rem;
+    gap: 10px;
+    padding-left: 4rem;
+}
+.main-inner-home button{
+    font-weight: bold;
+    letter-spacing: 0.02rem;
+    margin-top: 1.5rem;
+    align-self: flex-end;
+    justify-self: flex-end;
+    width: 100%;
+    padding: 2% 0;
+    margin-bottom: auto;
+    margin-top: -3%;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
