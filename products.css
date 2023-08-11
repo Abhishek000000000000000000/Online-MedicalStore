@@ -2,6 +2,7 @@
 body{
 	line-height: 1.5;
 	font-family: 'Poppins', sans-serif;
+    background-color: #FAF9F6;
 }
 .container{
 	max-width: 1170px;
@@ -181,6 +182,17 @@ header{
     padding: 10px;
     border-radius: 10px;
     transition: 0.3s;
+    background-color: #a6eae6;
+    background-image: linear-gradient(180deg, #a6eae6 0%, #ffffff 100%);
+    
+
+}
+
+#container > div:hover {
+    transform: scale(1.05);
+    background-color: #a6eae6;
+    background-image: linear-gradient(0deg, #a6eae6 0%, #ffffff 100%);
+    transition: 0.6s;
 }
 
 #childs-child{
@@ -221,10 +233,7 @@ header{
     transition: 0.3s;
 }
 
-#container > div:hover {
-    transform: scale(1.05);
-    transition: 0.3s;
-}
+
 
 #container > div > img:hover {
     transform: scale(1.2);
@@ -235,4 +244,86 @@ header{
     font-size: 16px;
     text-align: center;
     transition: 0.3s;
+}
+
+
+/* pagination */
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper ul{
+	display: flex;
+	padding: 8px;
+	border-radius: 50px;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper ul li{
+	list-style-type: none;
+	line-height: 55px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 600;
+	cursor: pointer;
+	background-color: #000;
+	margin: 10px;
+	border-radius: 50px;
+	color: #fff;
+	padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper ul li.numb{
+	border: 1px solid white;
+    background-color: #0a525f;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: 0.3s;
+    height: 40px;
+}
+
+.wrapper ul li.numb:hover {
+    background-color: white;
+    color: #0a525f;
+    border: 1px solid #0a525f;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.3s;
+    transform: scale(1.2);
+}
+
+.wrapper ul li.btn{
+	text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    background-color: #0a525f;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: 0.3s;
+    height: 40px;
+}
+.wrapper ul li.btn:hover{
+	background-color: white;
+    color: #0a525f;
+    border: 1px solid #0a525f;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.3s;
+    transform: scale(1.2);
+    font-size: 20px;
+}
+.wrapper ul li.active{
+	background-color: #fff;
+	color: #000;
+	box-shadow: 0 0 20px;
 }
