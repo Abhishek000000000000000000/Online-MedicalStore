@@ -8,35 +8,43 @@
     <link rel="stylesheet" href="./style.css">
 
 </head>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
 <body>
     <div id="parent">
         <div id="left">
-            <div>
+
+            
+            <div id="swiper-container">
                 <img src="https://www.netmeds.com/images/cms/aw_rbslider/slides/1691498938_569x90.jpg" alt="poster">
+       
             </div>
 
-            <div>
+            <!-- <div>
                 <p><span id="count">0</span> Items in your Cart</p>
                 <div id="logop">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/800px-Heart_coraz%C3%B3n.svg.png"
                         alt="">
-                    <!-- <p>Add to wishlist</p> -->
                 </div>
 
+            </div> -->
+            <div style="border:solid red;" id="mainContainersdfsdf">
+                <div id="cart1"></div>
+                <div id="cart2"></div>
+                <div id="cart3"></div>
             </div>
-            <div id="cartList"><span id="qty">+</span></div>
+            <!-- <div id="cartList"><span id="qty">+</span></div> -->
             <div>
-                <p>Save for later</p>
-                <p>No items to save for later</p>
-                <div class="lastBox">
+                <!-- <p>Save for later</p>
+                <p>No items to save for later</p> -->
+                <!-- <div class="lastBox">
                     <div>
                         <div>
                             <img src="https://www.netmeds.com/images/cms/aw_rbslider/slides/1691498938_569x90.jpg" alt="poster">
                         </div>
                     </div>
 
-                </div>
+                </div> -->
             </div>
         </div>
         <div id="right">
@@ -78,8 +86,7 @@
                 </div>
                 <div>
                     <button><a style="text-decoration: none; color: #000;"
-                        href="payment.html">Add
-                        Delivery Address</a></button>
+                        href="payment.html">Procced to pay</a></button>
                 </div>
 
             </div>
@@ -92,11 +99,56 @@
 </body>
 
 </html>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js">
+    let arr =  JSON.parse(localStorage.getItem("cart"))||[]
+       
+
+
+    arr.map((el)=>{
+        let mainContainer = document.getElementById("mainContainersdfsdf"); 
+        // let div1 = document.getElementById("cart1");
+        // let div2 = document.getElementById("cart2");
+        // let div3 = document.getElementById("cart3");
+        let div1 = document.createElement("div");
+        let div2 = document.createElement("div");
+        let div3 = document.createElement("div");
+        let mainDiv = document.createElement("div");
+        mainDiv.style.display= "flex"
+        mainDiv.style.gap= "30px"
+        let img = document.createElement("img");
+        let name = document.createElement("h3");
+        let p = document.createElement("p");
+        let price = document.createElement("h3");
+        let deleteImg = document.createElement("img");
+        let select = 
+        img.src = el.image;
+        name.innerText = el.name
+        p.innerText = el.product_form
+        price.innerText = `₹${el.price}`
+        deleteImg.src = "https://tse1.mm.bing.net/th?id=OIP.zO9872glOfr8mjsUiekwUAHaIL&pid=Api&P=0&h=180"
+        deleteImg.style.height = '30px'
+        deleteImg.style.width = '40px'
+        deleteImg.style.marginTop = "10px"
+        div1.append(img)
+        div2.append(name,p,price)
+        div3.append(deleteImg)
+        mainDiv.append(div1,div2,div3)
+        mainContainer.append(mainDiv)
+
+    })
 
 
 
 
-<script>
+    
+     var swiper = new Swiper('.swiper-container', {
+            // Customize Swiper options as needed
+            // For example, to enable navigation buttons:
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            }
+        });
 
 var isApplied =0
 var cart = JSON.parse(localStorage.getItem("cartproducts")) || [];
@@ -272,7 +324,7 @@ const decrease= (el)=>{
     
 }
 
-// <a href="./payment.html"></a>
+<!-- // <a href="./payment.html"></a> -->
 
 
 
