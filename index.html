@@ -15,7 +15,7 @@
             <div class="main-inner-home">
                 <h1>The place where<br> your health<br> matters the most.</h1>
                 <p>Better health starts here.</p>
-                <button>Register Now</button>
+                <button id="register">Register Now</button>
             </div>
             <div class="main-inner-home">
                 <div class="right-content-image">
@@ -155,3 +155,12 @@
     </div>
 </body>
 </html>
+
+<script>
+
+  let register_btn=document.getElementById("register");
+
+  register_btn.addEventListener("click",function(){
+    window.location.href="footer.html";
+  })
+</script>

@@ -36,5 +36,7 @@ header{
 #home-icon{
     font-size: 30px;
     margin-top: 2px;
+    color: #0a525f;
+    cursor: pointer;
 }
 
