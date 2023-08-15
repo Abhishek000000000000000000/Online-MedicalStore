@@ -29,6 +29,14 @@
             <div>
                 <p>Save for later</p>
                 <p>No items to save for later</p>
+                <div class="lastBox">
+                    <div>
+                        <div>
+                            <img src="https://www.netmeds.com/images/cms/aw_rbslider/slides/1691498938_569x90.jpg" alt="poster">
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
         <div id="right">
@@ -70,7 +78,7 @@
                 </div>
                 <div>
                     <button><a style="text-decoration: none; color: #000;"
-                        href="/Final_pharmesy/Mahesh/deleviry.html">Add
+                        href="payment.html">Add
                         Delivery Address</a></button>
                 </div>
 
@@ -89,7 +97,8 @@
 
 
 <script>
-    var isApplied =0
+
+var isApplied =0
 var cart = JSON.parse(localStorage.getItem("cartproducts")) || [];
 console.log(cart)
 if (cart.length > 0) {
@@ -200,7 +209,7 @@ function calcart(cart,coupon) {
     total.textContent = sum;
 
     localStorage.setItem('carttm', sum);
-    if(coupon =='APPLY PROMOCODE '||' NMS SUPERCASH' && isApplied == 0){
+    if(coupon =='APPLY PROMOCODE '||'NMS SUPERCASH' && isApplied == 0){
         isApplied++
         sum = sum -(sum*0.3)
         localStorage.setItem('coupvalm', sum);
@@ -256,11 +265,14 @@ const decrease= (el)=>{
     displaycart(cart);
     calcart(cart)
     countlen(cart);
+
+
+
+
     
 }
 
-// window.location.href = "Payment.html"
-<a href="./payment.html"></a>
+// <a href="./payment.html"></a>
 
 
 
