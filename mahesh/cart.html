@@ -39,6 +39,7 @@
 
                 </div>
             </div> -->
+           
         </div>
         <div id="right">
             <div>
@@ -120,7 +121,7 @@
             let div = document.createElement("div")
             let imgDiv = document.createElement("div")
             let image = document.createElement("img")
-            image.src = elem.img_url
+            image.src = elem.image
             image.alt = elem.name
             imgDiv.append(image)
 
@@ -173,7 +174,7 @@
             strickPrice.textContent = "MRP: " + elem.price
 
             let price = document.createElement("p")
-            price.textContent = "Rs: " + elem.finalPrice
+            price.textContent = "Rs: " + elem.price
 
             priceBox.append(strickPrice, price)
 
@@ -214,9 +215,9 @@
             alert("enter a valid coupon")
         }
         console.log(coupon)
-        document.getElementById("totalV").textContent = sum
+        document.getElementById("mrpTotal").textContent = sum
       
-        document.getElementById("totalA").textContent = sum
+        document.getElementById("totalprice").textContent = sum
 
         let mrpTotal = document.getElementById("mrpTotal").textContent = mrpSum
         console.log(sum/0.3)
