@@ -1,0 +1,105 @@
+<html>
+    <style>
+       /* Basic styling for the buttons */
+       body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.primary-section {
+  background-color: #007bff;
+}
+
+.secondary-section {
+  background-color: #f0f0f0;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button-primary {
+  background-color: #fff;
+  color: #007bff;
+}
+
+.button-secondary {
+  background-color: #333;
+  color: #fff;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+
+
+       
+        
+</style>
+<!-- <h3>continue for payment</h3> -->
+<div class="section primary-section">
+    <button id="rzp-button1" class="btn btn-outline-dark btn-lg"><i class="fas fa-money-bill"></i>Pay with Razorpay</button>
+
+</div>
+<div class="section secondary-section"> 
+   <button id="others" onclick="redirectToPage()">contuine with other methods</button>
+
+
+</div>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+  var options = {
+    "key": "rzp_test_BJ5XDSX4mR4WGh", // Enter the Key ID generated from the Dashboard
+    "amount": 100*100,
+    "currency": "INR",
+    "description": "Acme Corp",
+    "image": "https://s3.amazonaws.com/rzp-mobile/images/rzp.jpg",
+    "prefill":
+    {
+      "email": "gaurav.kumar@example.com",
+      "contact": +919900000000,
+    }
+
+  };
+  var rzp1 = new Razorpay(options);
+  document.getElementById('rzp-button1').onclick = function (e) {
+    rzp1.open();
+    e.preventDefault();
+
+   
+  }
+
+  function redirectToPage() {
+      console.log('asjdhvasjhdvjashd');
+      window.location.href = "pa.html";
+      alert("other modes of payments")
+            
+        }
+  
+
+
+
+  
+
+  
+</script>
+</html>
