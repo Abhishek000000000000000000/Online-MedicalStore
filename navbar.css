@@ -1,0 +1,42 @@
+header{
+    background-color: #FFFFFF;
+    width: 90%;
+    padding: 2rem;
+    padding-left: 20px;
+    padding-right: 30px;  
+    display: flex;
+    z-index: 100;
+    
+    justify-content: space-between;
+    position: fixed;
+}
+
+#navbar a{
+    color: #0a525f;
+    font-size:25px;
+    margin: 0 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    font-style: normal;
+    justify-content: space-between;
+}
+
+ button{
+    color: #FFFFFF;
+    background-color: #0a525f;
+    padding: 15px 10px 15px 10px;
+    border-radius: 1px solid black;
+    margin-top: -5px;
+    padding-left: -10px;
+ }
+#icons{
+    display: flex;
+    gap: 30px;
+}
+#home-icon{
+    font-size: 30px;
+    margin-top: 2px;
+    color: #0a525f;
+    cursor: pointer;
+}
+
