@@ -10,6 +10,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+
+  <header>
+
+    <div id="navbar">
+        <a href="products.html">Medicines</a>
+        <a href="#">Doctor</a>
+        <a href="products.html">Pharmacy</a>
+        <a href="index.html">Other services</a>
+  </div>
+
+  <div id="icons">
+  <div id="home-icon">
+    <i class="fa-solid fa-cart-shopping"></i>
+</div>
+  <button id="nav_btn">Consult Now</button>
+  </div>
+
+</header>
     <div class="home">
         <div class="main-home">
             <div class="main-inner-home">
@@ -150,9 +168,44 @@
               </div>
             </div>
           </div>
-      
-
     </div>
+    <footer class="footer">
+      <div class="container">
+          <div class="row">
+              <div class="footer-col">
+                  <h4>All Medicine</h4>
+                  <ul>
+                      <li><a href="#">Health & Care</a></li>
+                      <li><a href="#">Beauty Care</a></li>
+
+                  </ul>
+              </div>
+              <div class="footer-col">
+                  <h4>Doctors</h4>
+                  <ul>
+                      <li><a href="#">Physiotherapy</a></li>
+                      <li><a href="#">Heart Specialist</a></li>
+                  </ul>
+              </div>
+              <div class="footer-col">
+                  <h4>Hospital</h4>
+                  <ul>
+                      <li><a href="#">Government Listed</a></li>
+                      <li><a href="#">Top Private</a></li>
+                  </ul>
+              </div>
+              <div class="footer-col">
+                  <h4>follow us</h4>
+                  <div class="social-links">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+ </footer>
 </body>
 </html>
 
@@ -161,6 +214,20 @@
   let register_btn=document.getElementById("register");
 
   register_btn.addEventListener("click",function(){
-    window.location.href="footer.html";
-  })
+    window.location.href="signup.html";
+  });
+
+  let nav_button=document.getElementById("nav_btn");
+
+nav_button.addEventListener("click",function(){
+    window.location.href="products.html";
+});
+
+let cart_icon=document.querySelector("i");
+
+cart_icon.addEventListener("click",function(){
+    window.location.href="cart.html";
+});
+
+
 </script>

@@ -14,6 +14,7 @@
     padding: 2rem 10% ;
     width: 80%;
     padding-bottom: 5%;
+    margin-top: -30px;
 }
 .main-home{
     display: flex;
@@ -208,4 +209,134 @@ section{
     color: #f1f1f1;
     margin-top: -20px;
     padding-bottom: 15px;
+}
+
+/*navbar*/
+
+header{
+    background-color: #FFFFFF;
+    width: 90%;
+    padding: 2rem;
+    padding-left: 20px;
+    padding-right: 30px;  
+    display: flex;
+    z-index: 100;
+    
+    justify-content: space-between;
+    
+}
+
+#navbar a{
+    color: #0a525f;
+    font-size:25px;
+    margin: 0 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    font-style: normal;
+    justify-content: space-between;
+}
+
+ button{
+    color: #FFFFFF;
+    background-color: #0a525f;
+    padding: 15px 10px 15px 10px;
+    border-radius: 1px solid black;
+    margin-top: -5px;
+    padding-left: -10px;
+    cursor: pointer;
+ }
+#icons{
+    display: flex;
+    gap: 30px;
+}
+#home-icon{
+    font-size: 30px;
+    margin-top: 2px;
+    color: #0a525f;
+    cursor: pointer;
+}
+
+/*footer*/
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 25%;
+   
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
 }
