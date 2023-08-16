@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+<body>
+    <div id="parent">
+        <div id="left">
+
+            
+            <div id="swiper-container">
+                <img src="https://www.netmeds.com/images/cms/aw_rbslider/slides/1691498938_569x90.jpg" alt="poster">
+       
+            </div>
+
+            <!-- <div>
+                <p><span id="count">0</span> Items in your Cart</p>
+                <div id="logop">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/800px-Heart_coraz%C3%B3n.svg.png"
+                        alt="">
+                </div>
+
+            </div> -->
+            <div style="border:solid red;" id="mainContainersdfsdf">
+                <div id="cart1"></div>
+                <div id="cart2"></div>
+                <div id="cart3"></div>
+            </div>
+            <!-- <div id="cartList"><span id="qty">+</span></div> -->
+            <div>
+                <!-- <p>Save for later</p>
+                <p>No items to save for later</p> -->
+                <!-- <div class="lastBox">
+                    <div>
+                        <div>
+                            <img src="https://www.netmeds.com/images/cms/aw_rbslider/slides/1691498938_569x90.jpg" alt="poster">
+                        </div>
+                    </div>
+
+                </div> -->
+            </div>
+        </div>
+        <div id="right">
+            <div>
+                <p>
+                    Promo Code (APPLY PROMOCODE / NMS SUPERCASH)
+                </p>
+                                <input type="text" id="applypromo" placeholder="Apply Coupons">
+
+                <button id="" onclick="applypromo()">Apply Coupon</button>
+
+            </div>
+            <div>
+                <p>Payment Summary <span id="totalprice"></span></p>
+            </div>
+            <div>
+                <!-- <div>
+                    
+                </div> -->
+
+            </div>
+            <br>
+
+            <div>
+                <p>Bill Summary</p>
+                <div class="box_r">
+                    <p>INR :</p>
+                    <p id="mrpTotal">0</p>
+                </div>
+
+                <div class="box_r">
+                    <p>Cart Value: </p>
+                    <p id="totalV">0</p>
+                </div>
+
+                <div class="box_r">
+                    <h4>Amount to be paid: </h4>
+                    <h4 id="totalA">0</h4>
+                </div>
+                <div>
+                    <button><a style="text-decoration: none; color: #000;"
+                        href="payment.html">Procced to pay</a></button>
+                </div>
+
+            </div>
+            <br>
+            <div>
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js">
+    let arr =  JSON.parse(localStorage.getItem("cart"))||[]
+       
+
+
+    arr.map((el)=>{
+        let mainContainer = document.getElementById("mainContainersdfsdf"); 
+        // let div1 = document.getElementById("cart1");
+        // let div2 = document.getElementById("cart2");
+        // let div3 = document.getElementById("cart3");
+        let div1 = document.createElement("div");
+        let div2 = document.createElement("div");
+        let div3 = document.createElement("div");
+        let mainDiv = document.createElement("div");
+        mainDiv.style.display= "flex"
+        mainDiv.style.gap= "30px"
+        let img = document.createElement("img");
+        let name = document.createElement("h3");
+        let p = document.createElement("p");
+        let price = document.createElement("h3");
+        let deleteImg = document.createElement("img");
+        let select = 
+        img.src = el.image;
+        name.innerText = el.name
+        p.innerText = el.product_form
+        price.innerText = `₹${el.price}`
+        deleteImg.src = "https://tse1.mm.bing.net/th?id=OIP.zO9872glOfr8mjsUiekwUAHaIL&pid=Api&P=0&h=180"
+        deleteImg.style.height = '30px'
+        deleteImg.style.width = '40px'
+        deleteImg.style.marginTop = "10px"
+        div1.append(img)
+        div2.append(name,p,price)
+        div3.append(deleteImg)
+        mainDiv.append(div1,div2,div3)
+        mainContainer.append(mainDiv)
+
+    })
+
+
+
+
+    
+     var swiper = new Swiper('.swiper-container', {
+            // Customize Swiper options as needed
+            // For example, to enable navigation buttons:
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            }
+        });
+
+var isApplied =0
+var cart = JSON.parse(localStorage.getItem("cartproducts")) || [];
+console.log(cart)
+if (cart.length > 0) {
+    displaycart(cart);
+    countlen(cart);
+    calcart(cart);
+} else {
+    document.getElementById("cartList").textContent = "NO ITEMS ADDED";;
+}
+
+
+function applypromo() {
+  var promocodeinput = document.getElementById("applypromo").value;
+  calcart(cart,promocodeinput);
+}
+
+
+function displaycart(cart) {
+
+    document.getElementById("cartList").textContent = "";
+
+    cart.map(function (elem, index) {
+        let div = document.createElement("div")
+        let imgDiv = document.createElement("div")
+        let image = document.createElement("img")
+        image.src = elem.img_url
+        image.alt = elem.name
+        imgDiv.append(image)
+
+        let contentDiv = document.createElement("div")
+
+        let nameDelDiv = document.createElement("div")
+        nameDelDiv.setAttribute("id", "nameDel")
+
+
+        let name = document.createElement("h3")
+        name.textContent = elem.name
+
+        let qtyDiv = document.createElement("div")
+         qtyDiv.style.display = 'flex'
+         qtyDiv.style.gap="10px"
+
+        let plus = document.createElement("button")
+        plus.innerText = "+"
+        plus.addEventListener('click',()=>{
+            add(elem)
+        })
+        qtyDiv.append(plus)
+
+        let qty = document.createElement('p')
+        qty.innerText = elem.quantity ||1
+        qtyDiv.append(qty)
+
+        let minus = document.createElement("button")
+        minus.innerText = '-'
+        minus.addEventListener('click',()=>{
+            decrease(elem)
+        })
+        qtyDiv.append(minus)
+
+        
+
+        let del = document.createElement("p");
+        del.textContent = "Delete";
+
+        del.addEventListener("click", function () {
+            deletetask(index);
+        });
+
+        nameDelDiv.append(name,qtyDiv, del, )
+
+        let priceBox = document.createElement("div")
+        priceBox.className = "pBox"
+
+        let strickPrice = document.createElement("p")
+        strickPrice.textContent = "MRP: " + elem.price
+
+        let price = document.createElement("p")
+        price.textContent = "Rs: " + elem.finalPrice
+
+        priceBox.append(strickPrice, price)
+
+        let dilv = document.createElement("p")
+        dilv.textContent = "Delivery by Tomorrow, before 10:00 pm"
+
+        contentDiv.append(nameDelDiv, priceBox, dilv)
+
+        div.append(imgDiv, contentDiv)
+        document.getElementById("cartList").append(div)
+    })
+}
+
+function calcart(cart,coupon) {
+    
+    if(isApplied == 1){
+        alert(" coupon already applied")
+        return
+    }
+    var sum = cart.reduce(function (acc, curel) {
+        return parseInt(acc) + parseInt(curel.total)
+    }, 0);
+
+    var mrpSum = cart.reduce(function (acc, curel) {
+        return parseInt(acc) + parseInt(curel.price)
+    }, 0);
+
+    let total = document.getElementById("totalprice")
+    total.textContent = sum;
+
+    localStorage.setItem('carttm', sum);
+    if(coupon =='APPLY PROMOCODE '||'NMS SUPERCASH' && isApplied == 0){
+        isApplied++
+        sum = sum -(sum*0.3)
+        localStorage.setItem('coupvalm', sum);
+        alert("coupon applied successfully.")
+    }else if(coupon?.length>0){
+        alert("enter a valid coupon")
+    }
+    console.log(coupon)
+    document.getElementById("totalV").textContent = sum
+  
+    document.getElementById("totalA").textContent = sum
+
+    let mrpTotal = document.getElementById("mrpTotal").textContent = mrpSum
+    console.log(sum/0.3)
+}
+
+function countlen(array) {
+    document.getElementById("count").textContent = array.length;
+}
+
+function deletetask(index) {
+    var rem = cart.splice(index, 1);
+    localStorage.setItem("cartproducts", JSON.stringify(cart));
+    location.reload();
+    displaycart(cart);
+    countlen(cart);
+}
+
+const add = (el) =>{
+    //debugger
+    let qty = el.quantity || 1
+    let obj = cart.find((x)=>x.id == el.id)
+    qty+=1
+    obj['quantity'] = qty;
+    obj['total'] =  +qty*+obj?.finalPrice
+    console.log(cart,qty)
+    localStorage.setItem("cartproducts", JSON.stringify(cart));
+    // location.reload();
+    displaycart(cart);
+    calcart(cart)
+    countlen(cart);
+
+}
+
+const decrease= (el)=>{
+     let qty = el.quantity || 1
+    let obj = cart.find((x)=>x.id == el.id)
+    qty > 1 ? qty-=1 : qty=qty
+    obj['quantity'] = qty;
+    obj['total'] =  +qty*+obj?.finalPrice
+    console.log(cart,qty)
+    localStorage.setItem("cartproducts", JSON.stringify(cart));
+    displaycart(cart);
+    calcart(cart)
+    countlen(cart);
+
+
+
+
+    
+}
+
+<!-- // <a href="./payment.html"></a> -->
+
+
+
+
+
+</script>
