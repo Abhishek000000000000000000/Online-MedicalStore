@@ -14,9 +14,9 @@
   <header>
 
     <div id="navbar">
-        <a href="index.html">Medicines</a>
+        <a href="products.html">Medicines</a>
         <a href="#">Doctor</a>
-        <a href="#">Pharmacy</a>
+        <a href="products.html">Pharmacy</a>
         <a href="#">Other services</a>
   </div>
 
@@ -214,6 +214,20 @@
   let register_btn=document.getElementById("register");
 
   register_btn.addEventListener("click",function(){
-    window.location.href="footer.html";
-  })
+    window.location.href="signup.html";
+  });
+
+  let nav_button=document.getElementById("nav_btn");
+
+nav_button.addEventListener("click",function(){
+    window.location.href="products.html";
+});
+
+let cart_icon=document.querySelector("i");
+
+cart_icon.addEventListener("click",function(){
+    window.location.href="cart.html";
+});
+
+
 </script>

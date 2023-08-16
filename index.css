@@ -243,6 +243,7 @@ header{
     border-radius: 1px solid black;
     margin-top: -5px;
     padding-left: -10px;
+    cursor: pointer;
  }
 #icons{
     display: flex;
